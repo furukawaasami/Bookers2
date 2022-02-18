@@ -3,15 +3,17 @@
 
 <body>
   <div class>
-    <h1>Welcome to <i class="fa-thin fa-otter"></i><string> Bookers!!</string></h1><br>
-    <p>you can share and exchange your opinions, inpressions,and emotions<br>
-    about various books!</p
+    <h1>Welcome to  <%= fa_icon("book") %>Bookers!!</h1>
+  <p>In <%= fa_icon("book") %>Bookers,<br><br>you can share and exchange your opinions, inpressions,and emotions<br><br>
+    about various books!</p>
 
-    <i class="fa-thin fa-otter">
     <%= fa_icon("home 3x") %>
 
 
   </div>
-  <li class="nav-item"><%= link_to "Log in", new_user_session_path %></li>
+  <%= link_to "Log in", new_user_session_path, class: "btn btn-success" %></li>
   <li class="nav-item"><%= link_to "Sign up", new_user_registration_path %></li>
 </body>
+
+
+<button type="button" class="btn btn-success">Info</button>
