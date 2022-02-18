@@ -13,53 +13,45 @@
     <script src="https://kit.fontawesome.com/89cb014662.js" crossorigin="anonymous"></script>
   </head>
 
-  <<body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand p-3" href="/"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>Bookers</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+　　　　　<li><a class="fas fa-home nav-link text-light" href="/"> Home</a></li>
+          <li><a class="fas fa-dog nav-link text-light" href="/users"> Users</a></li>
+          <li><a class="fas fa-user-plus nav-link text-light" href="/books"> Books</a></li>
+          <li><a class="fas fa-sign-in-alt nav-link text-light" href="/"> Log out</a></li>
+　　　<% else %>
+　　　　  <li><a class="fas fa-home nav-link text-light" href="/"> Home</a></li>
+          <li><a class="fas fa-link nav-link text-light" href="/users"> Users</a></li>
+          <li><a class="fas fa-user-plus nav-link text-light" href="/books"> Books</a></li>
+          <li><a class="fas fa-sign-in-alt nav-link text-light" href="/users/sign_in"> Log out</a></li>
+　　　<% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-             <li class="nav-item"><%= link_to root_path do %><%= fa_icon("home") %><p>Home</p><% end %></li>
-             <li class="nav-item"><%= link_to users_path do %><%= fa_icon("dog") %><p>User</p><% end %></li>
-             <li class="nav-item"><%= link_to books_path do %><%= fa_icon("cat") %><p>Book</p><% end %></li>
-             <li class="nav-item"><%= link_to destroy_user_session_path, method: :delete do %><%= fa_icon("crow") %><p>Log out</p><% end %></li>
-            <% else %>
-             <li class="nav-item"><%= link_to root_path do %><%= fa_icon("home") %><p>Home</p><% end %></li>
-             <li class="nav-item"><%= link_to about_path do %><%= fa_icon("fish") %><p>About</p><% end %></li>
-             <li class="nav-item"><%= link_to new_user_registration_path do %><%= fa_icon("kiwi-bird") %><p>Sign up</p><% end %></li>
-             <li class="nav-item"><%= link_to new_user_session_path do %><%= fa_icon("dove")%><p>Log in</p><% end %></li>
-            <% end %>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
   <%= yield %>
 
-  <footer>
-   <div class="container">
-     <div class="foot">CopyRight Infratop.inc</div>
+   <footer>
+     <div class="container mt-5">
+       <div class="row">
+         <div class="max-auto">
+         　<p class="text-center">CopyRight Infratop.inc</p>
+       </div>
+     </div>
    </div>
- </footer>
+  </footer>
 </body>
 
-
-<div class="container">
-<div class="row">
-
-　　<div class="col bg-primary">1</div>
-　　<div class="col bg-danger">2</div>
-　　<div class="col bg-info">3</div>
-
-</div>
-</div>
-</html>
 
 
