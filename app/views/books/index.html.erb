@@ -1,4 +1,6 @@
-books
+<h3>User info</h3>
+
+
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
 <h4>タイトル</h4>
@@ -13,7 +15,7 @@ books
 
 
 <% @books.each do |book| %>
-<h1>投稿一覧</h1>
+<h4>投稿一覧</h4>
 
 
   <p>タイトル</p>
