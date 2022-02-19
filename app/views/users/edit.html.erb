@@ -1,10 +1,28 @@
-<h2>User info</h2>
 <%= form_with model: @user, method: :patch do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%>
-  <label for="inputImage">ProfileImage</label>
-  <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
-  <label for="inputImage">Introduction</label>
-  <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
-  <%= f.submit "Update User" %>
+<p id="notice"></p>
+        <div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>User info</h2>
+     <div class="form-group">
+       <label for="inputName">Name</label>
+     </div>
+     <div class="form-group">
+       <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%>
+     </div>
+     <div class="form-group">
+       <label for="inputImage">Image</label>
+     </div>
+     <div class="form-group">
+       <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
+     </div>
+     <div class="form-group">
+       <label for="inputImage">Introduction</label>
+       <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+     </div>
+     <div class="form-group">
+       <%= f.submit "Update User" %>
+     </div>
 <% end %>
+</div>
+</div>
