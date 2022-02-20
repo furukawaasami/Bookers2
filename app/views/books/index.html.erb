@@ -1,5 +1,7 @@
 <h3>User info</h3>
 
+<%= @user.name %>
+
 
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
@@ -18,7 +20,7 @@
 <% @books.each do |book| %>
 
   <p1>タイトル</p1>
-  <span> <%=  book.title %> </span>
+  <span><%=link_to book.title, book_path(book.id) %> </span>
   <%= book.body %>
 
 
