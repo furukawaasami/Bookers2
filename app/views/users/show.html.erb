@@ -1,6 +1,9 @@
 
-<p><%= image_tag user.get_profile_image(100,100) %></p>
+show
 <% @books.each do |book| %>
-
-<%= book.title %>
-<%= end %>
+<div>
+  <p><%= image_tag @user.get_profile_image(100,100) %></p>
+  <p><%= book.title %></p>
+  <p><%= book.body %></p>
+</div>
+<% end %>
