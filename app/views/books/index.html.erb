@@ -14,10 +14,12 @@
 <% end %>
 
 
-<% @books.each do |book| %>
 <h4>投稿一覧</h4>
+<% @books.each do |book| %>
+
+  <p1>タイトル</p1>
+  <span> <%=  book.title %> </span>
+  <%= book.body %>
 
 
-  <p>タイトル</p>
-  <span> <%= link_to book.title,books_path(book.id) %> </span>
   <% end %>
