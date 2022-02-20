@@ -1,1 +1,22 @@
-user show
+<% @users.each do |user| %>
+  <div>
+    <%= link_to profile_image_path(profile_image.id) do %>
+      <%= profile_image_tag profile_image.get_profile_image %>
+    <% end %>
+
+
+
+  <p><%= profile_image_tag post_profile__image.user.get_profile_image(100,100) %></p>
+  <%= @user.name %>
+  <%= @user.introduction %>
+
+<% @book.each do |book| %>
+
+  <h2>タイトル</h2>
+<p><%= @book.title %></p>
+
+<h2>本文</h2>
+<p><%= @book.body %></p>
+
+
+  <% end %>
