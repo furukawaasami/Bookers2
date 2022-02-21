@@ -1,13 +1,10 @@
-<div class="container px-5 px-sm-0">
- <div class="row">
-  <div class="col-md-3">
-  </div>
+<%= render 'sidemenu', book: @newbook, user: @user %>
   <div class="col-md-8 offset-md-1">
      <h2>Book detail</h2>
      <table class='table'>
       <tbody>
       <tr>
-       <td><%= image_tag @book.user.get_profile_image(50,50) %></td>
+       <td><%= image_tag @user.get_profile_image(50,50) %></td>
        <td><%= @book.title %></td>
        <td><%= @book.body %></td>
        <% if @book.user == current_user %>
