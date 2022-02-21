@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @users = User.all
     @books = Book.all
     @newbook = Book.new
-    @user = book.user
+    @user = current_user
   end
 
   def edit
