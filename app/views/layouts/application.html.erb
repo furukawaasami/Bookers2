@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/89cb014662.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <header>
+<body>
+ <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/"><span>Bookers</span></a>
@@ -24,46 +24,47 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item mr-3">
           <%= link_to user_path(current_user), class: "nav-link text-light" do %>
            <i class="fas fa-home"></i> Home
            <% end %>
         </li>
-           <li class="nav-item mr-3">
-             <%=link_to users_path do %>
-             <i class="fas fa-users text-light"></i>Users
-             <% end %>
-             </li>
-           <li class="nav-item mr-3">
-             <%=link_to books_path do %>
-             <i class="fas fa-book-open text-light"></i>Books
-             <% end %>
-             </li>
-           <li class="nav-item mr-3">
-             <%=link_to destroy_user_session_path, method: :delete do %>
-             <i class="fas fa-sign-out-alt text-light"></i>Log out
-             <% end %>
-           </li>
+        <li class="nav-item mr-3">
+         <%=link_to users_path, class: "nav-link text-light" do %>
+          <i class="fas fa-users"></i> Users
+           <% end %>
+        </li>
+        <li class="nav-item mr-3">
+         <%=link_to books_path, class: "nav-link text-light" do %>
+          <i class="fas fa-book-open"></i>Books
+           <% end %>
+        </li>
+        <li class="nav-item mr-3">
+          <%=link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+           <i class="fas fa-sign-out-alt"></i> Log out
+            <% end %>
+        </li>
 　　　<% else %>
-           <li class="nav-item">
-　　　　     <a class="nav-link text-light" href="/">
-　　　　      <i class="fas fa-home"></i>Home
-　　　　      </a>
-　　　　     </li>
-           <li class="nav-item">
-             <a class="nav-link text-light" href="home/about">
-              <i class="fas fa-paperclip"></i>About
-             </li>
-           <li class="nav-item">
-             <%=link_to new_user_registration_path do %>
-             <i class="fas fa-user-plus text-light"></i>Sign up
-             <% end %>
-             </li>
-           <li class="nav-item mr-3">
-             <%=link_to new_user_session_path do %>
-             <i class="fas fa-sign-in-alt"></i>Log in
-             <% end %>
-             </li>
+        <li class="nav-item mr-3">
+　　　　 <a class="nav-link text-light" href="/">
+　　　　  <i class="fas fa-home"></i>Home
+　　　　 </a>
+　　　　</li>
+        <li class="nav-item">
+         <a class="nav-link text-light" href="/home/about">
+          <i class="fas fa-paperclip"></i>About
+          </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link text-light" href="/users/sign_up">
+          <i class="fas fa-user-plus"></i>Sign up
+          </a>
+        </li>
+        <li class="nav-item mr-3">
+         <a class="nav-link text-light" href="/users/sign_in">
+          <i class="fas fa-sign-in-alt"></i>Log in
+          </a>
+        </li>
 
         <% end %>
         </ul>
@@ -75,7 +76,7 @@
  <% flash.each do |key, value| %>
  <%= content_tag(:div, value, class: "#{key}") %>
  <% end %>
-  </main>
+</main>
 
 
   <%= yield %>
@@ -85,10 +86,10 @@
     <div class='row'>
       <div class='mx-auto'>
         <p>CopyRight Infratop.inc</p>
-      </div>
+     </div>
     </div>
   </div>
-</footer>
+ </footer>
 </body>
 
 
