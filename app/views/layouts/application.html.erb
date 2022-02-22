@@ -24,15 +24,47 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-           <li class="nav-item mr-3"><%=link_to "Home",user_path(current_user.id),class:"fas fa-home text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"Users",users_path,class:"fas fa-dog text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"Books",books_path,class:"fas fa-cat text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"Log out",destroy_user_session_path, method: :delete, class:"fas fa-crow text-light" %></li>
+        <li class="nav-item">
+          <%= link_to user_path(current_user), class: "nav-link text-light" do %>
+           <i class="fas fa-home"></i> Home
+           <% end %>
+        </li>
+           <li class="nav-item mr-3">
+             <%=link_to users_path do %>
+             <i class="fas fa-users text-light"></i>Users
+             <% end %>
+             </li>
+           <li class="nav-item mr-3">
+             <%=link_to books_path do %>
+             <i class="fas fa-book-open text-light"></i>Books
+             <% end %>
+             </li>
+           <li class="nav-item mr-3">
+             <%=link_to destroy_user_session_path, method: :delete do %>
+             <i class="fas fa-sign-out-alt text-light"></i>Log out
+             <% end %>
+             </li>
 　　　<% else %>
-　　　　   <li class="nav-item mr-3"><%=link_to "Home",root_path,class:"fas fa-home text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"About",about_path,class:"fas fa-fish text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"Sign up",new_user_registration_path,class:"fas fa-kiwi-bird text-light" %></li>
-           <li class="nav-item mr-3"><%=link_to"Log in",new_user_session_path, class:"fas fa-dove text-light" %></li>
+　　　　   <li class="nav-item">
+　　　　     <a class="nav-link text-light" href="/">
+　　　　      <i class="fas fa-home"></i>Home
+　　　　      </a>
+　　　　     </li>
+           <li class="nav-item mr-3">
+             <%=link_to about_path do %>
+             <i class="fas fa-paperclip text-light"></i>About
+             <% end %>
+             </li>
+           <li class="nav-item mr-3">
+             <%=link_to new_user_registration_path do %>
+             <i class="fas fa-user-plus text-light"></i>Sign up
+             <% end %>
+             </li>
+           <li class="nav-item mr-3">
+             <%=link_to new_user_session_path do %>
+             <i class="fas fa-sign-in-alt"></i>Log in
+             <% end %>
+             </li>
 　　　<% end %>
         </ul>
       </div>
@@ -40,9 +72,9 @@
   </nav>
 </header>
 <main>
-    <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
+ <% flash.each do |key, value| %>
+ <%= content_tag(:div, value, class: "#{key}") %>
+ <% end %>
   </main>
 
 
