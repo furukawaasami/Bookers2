@@ -43,19 +43,18 @@
              <%=link_to destroy_user_session_path, method: :delete do %>
              <i class="fas fa-sign-out-alt text-light"></i>Log out
              <% end %>
-             </li>
+           </li>
 　　　<% else %>
-　　　　   <li class="nav-item">
+           <li class="nav-item">
 　　　　     <a class="nav-link text-light" href="/">
 　　　　      <i class="fas fa-home"></i>Home
 　　　　      </a>
 　　　　     </li>
-           <li class="nav-item mr-3">
-             <%=link_to about_path do %>
-             <i class="fas fa-paperclip text-light"></i>About
-             <% end %>
+           <li class="nav-item">
+             <a class="nav-link text-light" href="home/about">
+              <i class="fas fa-paperclip"></i>About
              </li>
-           <li class="nav-item mr-3">
+           <li class="nav-item">
              <%=link_to new_user_registration_path do %>
              <i class="fas fa-user-plus text-light"></i>Sign up
              <% end %>
@@ -65,7 +64,8 @@
              <i class="fas fa-sign-in-alt"></i>Log in
              <% end %>
              </li>
-　　　<% end %>
+
+        <% end %>
         </ul>
       </div>
     </div>
